@@ -1,0 +1,11 @@
+logrotate state -- version 2
+"/home/simran/.cache/upstart/upstart-event-bridge.log" 2019-5-23-0:44:19
+"/home/simran/.cache/upstart/window-stack-bridge.log" 2019-5-23-0:44:19
+"/home/simran/.cache/upstart/dbus.log" 2019-5-23-0:44:19
+"/home/simran/.cache/upstart/indicator-sound.log" 2019-5-23-0:44:19
+"/home/simran/.cache/upstart/ssh-agent.log" 2019-5-23-0:44:19
+"/home/simran/.cache/upstart/unity7.log" 2019-5-23-0:44:19
+"/home/simran/.cache/upstart/gnome-keyring-ssh.log" 2019-5-23-0:44:19
+"/home/simran/.cache/upstart/unity-settings-daemon.log" 2019-5-23-0:44:19
+"/home/simran/.cache/upstart/gpg-agent.log" 2019-5-23-0:44:19
+"/home/simran/.cache/upstart/unity-panel-service.log" 2019-5-23-0:44:19
