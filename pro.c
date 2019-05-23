@@ -9,11 +9,10 @@
 void rubbies(int ,int,int ,int );
 int x=5;
 int y=5;
-int c1,c2,b1,b2;
-c1=25;
-c2=85;
-b1=c1;
-b2=c2;
+int c1=25;
+int c2=85;
+int b1=25;
+int b2=85;
 int temp=0;
 int lock=1;
 int lock1=0;
@@ -509,7 +508,7 @@ void window3()
             glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,str5[i]);
         }
 
-        _itoa_s(count,str,10);
+        //_itoa_s(count,str,10);
         glColor3f(1,1,0);
         glRasterPos2f(425,300);
         for(int i=0;i<strlen(str);i++)
@@ -745,12 +744,13 @@ void mykey(unsigned char key,int x,int y)
    }
     glutPostRedisplay();
 }
-void main()
+void main(int argc,char **argv)
 {
+    glutInit(&argc,argv);
     glutInitDisplayMode(GLUT_RGB|GLUT_DOUBLE);
     glutInitWindowPosition(50,50);
     glutInitWindowSize(900,600);
-    glutCreateWindow("KIO");
+    glutCreateWindow("THE RESPONSIBLE CITIZEN");
     myinit();
     glutMouseFunc(mouse);
     if(end==0)
@@ -758,5 +758,4 @@ void main()
     glutDisplayFunc(display1);
    	    glutMainLoop();
 }
-
 

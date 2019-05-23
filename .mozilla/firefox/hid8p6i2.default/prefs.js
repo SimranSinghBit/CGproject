@@ -36,8 +36,8 @@ user_pref("browser.pageActions.persistedActions", "{\"version\":1,\"ids\":[\"boo
 user_pref("browser.pagethumbnails.storage_version", 3);
 user_pref("browser.safebrowsing.provider.google4.lastupdatetime", "1558614309832");
 user_pref("browser.safebrowsing.provider.google4.nextupdatetime", "1558616133832");
-user_pref("browser.safebrowsing.provider.mozilla.lastupdatetime", "1558616624879");
-user_pref("browser.safebrowsing.provider.mozilla.nextupdatetime", "1558620224879");
+user_pref("browser.safebrowsing.provider.mozilla.lastupdatetime", "1558628779937");
+user_pref("browser.safebrowsing.provider.mozilla.nextupdatetime", "1558632379937");
 user_pref("browser.search.region", "IN");
 user_pref("browser.shell.mostRecentDateSetAsDefault", "1558597485");
 user_pref("browser.slowStartup.averageTime", 13530);

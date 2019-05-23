@@ -371,3 +371,17 @@ Fontconfig warning: Directory/file mtime in the future. New fonts may not be det
 Fontconfig warning: Directory/file mtime in the future. New fonts may not be detected.
 Fontconfig warning: Directory/file mtime in the future. New fonts may not be detected.
 Fontconfig warning: Directory/file mtime in the future. New fonts may not be detected.
+WARN  2019-05-23 09:07:45 unity.a11y.expanderview unity-expander-view-accessible.cpp:185 has_focus = 1
+WARN  2019-05-23 09:07:46 unity.iconloader IconLoader.cpp:756 Unable to load icon file:/// at size -1x22: Can't open directory
+WARN  2019-05-23 09:07:47 unity.a11y.expanderview unity-expander-view-accessible.cpp:185 has_focus = 0
+
+(nautilus:12221): GLib-GIO-CRITICAL **: g_dbus_interface_skeleton_unexport: assertion 'interface_->priv->connections != NULL' failed
+
+(nautilus:12221): GLib-GIO-CRITICAL **: g_dbus_interface_skeleton_unexport: assertion 'interface_->priv->connections != NULL' failed
+
+(nautilus:12221): Gtk-CRITICAL **: gtk_icon_theme_get_for_screen: assertion 'GDK_IS_SCREEN (screen)' failed
+
+(nautilus:12221): GLib-GObject-WARNING **: invalid (NULL) pointer instance
+
+(nautilus:12221): GLib-GObject-CRITICAL **: g_signal_connect_object: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+ERROR 2019-05-23 09:11:50 unity.settings UnitySettings.cpp:404 Invalid monitor index: -1. Returning index 0 monitor instead.
