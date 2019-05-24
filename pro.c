@@ -1,4 +1,3 @@
-
 #include<stdlib.h>
 #include<string.h>
 #include<GL/gl.h>
@@ -6,7 +5,7 @@
 #include<stdio.h>
 #include<math.h>
 #include<time.h>
-void rubbies(int ,int,int ,int );
+
 int x=5;
 int y=5;
 int c1=25;
@@ -24,114 +23,129 @@ int wind[]={1,0,0};
 int count=0;
 int extra=0;
 int win=0;
+
+void rubbies(int ,int,int ,int );
 void window3();
+
 void myinit()
 {
-    	glMatrixMode(GL_PROJECTION);
-  	  glLoadIdentity();
-   	 gluOrtho2D(0,900,0,600);
-   	 glMatrixMode(GL_MODELVIEW);
+    glMatrixMode(GL_PROJECTION);
+  	glLoadIdentity();
+   	gluOrtho2D(0,900,0,600);
+   	glMatrixMode(GL_MODELVIEW);
 }
+
 void base()
 {
- 	  int k=0,n=0;
- 	  glColor3f(1,1,1);
-  	  glBegin(GL_POLYGON);
-    	glVertex2f(0,0);
-    	glVertex2f(0,85);
-    	glVertex2f(900,85);
-    	glVertex2f(900,0);
-    	glEnd();
-    	glColor3f(0.5,0,0);
-    	x=5;y=5;
-    	for(n=0;n<4;n++)
-    	{
-       		 for(k=0;k<21;k++)
-        		{
-           			glBegin(GL_POLYGON);
-            		glVertex2f(x,y);
-           			glVertex2f(x,y+15);
-            		glVertex2f(x+40,y+15);
+	int k=0,n=0;
+	glColor3f(1,1,1);
+	
+	// The bottom brick layer in the output.
+  	glBegin(GL_POLYGON);
+    glVertex2f(0,0);
+    glVertex2f(0,85);
+    glVertex2f(900,85);
+    glVertex2f(900,0);
+    glEnd();
+    
+    glColor3f(0.5,0,0);
+    x=5;
+	y=5;
+	// Loop to draw the bricks in the bottom layer.
+   	for(n=0;n<4;n++) {
+		for(k=0;k<21;k++) {
+			glBegin(GL_POLYGON);
+            glVertex2f(x,y);
+           	glVertex2f(x,y+15);
+            glVertex2f(x+40,y+15);
             glVertex2f(x+40,y);
             glEnd();
             x=x+45;
-        		}
-        if(n==0 || n==2)
+        }
+        
+		if(n==0 || n==2)
             x=-15;
         else
-        x=5;
+	        x=5;
+
         y=y+20;
- 	   }
+	}
 }
 
-
-void bricks(int a,int b,int x2,int y1)
-{
+// Creates the brick pattern on the white layers.
+void bricks(int a,int b,int x2,int y1) {
     int n,m=a,k;
     glColor3f(0.5,0,0);
-    for(n=0;b<y1;n++)
-    {
-           if(n==0 || n==2){
+    
+	for(n=0;b<y1;n++) {
+		if(n==0 || n==2){
            a=m;
+           glBegin(GL_POLYGON);
+           glVertex2f(a,b);
+           glVertex2f(a,b+15);
+           glVertex2f(a+15,b+15);
+           glVertex2f(a+15,b);
+           glEnd();
+           
+           a=a+20;
+           for(;a<x2;) {
+			k=a+40;
+            if(a+40>x2)
+            	k=x2;
+            
+            glBegin(GL_POLYGON);
+            glVertex2f(a,b);
+            glVertex2f(a,b+15);
+            glVertex2f(k,b+15);
+            glVertex2f(k,b);
+            glEnd();
+            
+            a=a+45;
+		   }
+		}
+        else {
+			a=m;
+         	for(;a<x2;) {
+            	k=a+40;
+            	if(a+40>x2)
+                	k=x2;
             	glBegin(GL_POLYGON);
-            	glVertex2f(a,b);
-            glVertex2f(a,b+15);
-            glVertex2f(a+15,b+15);
-            glVertex2f(a+15,b);
-            glEnd();
-            a=a+20;
-            for(;a<x2;)
-            {
-            k=a+40;
-            if(a+40>x2)
-            k=x2;
-            glBegin(GL_POLYGON);
-            glVertex2f(a,b);
-            glVertex2f(a,b+15);
-            glVertex2f(k,b+15);
-            glVertex2f(k,b);
-            glEnd();
-            a=a+45;
-  }
-         }
-         else{
-           	 a=m;
-           	 for(;a<x2;)
-        		{
-            k=a+40;
-            if(a+40>x2)
-                k=x2;
-            glBegin(GL_POLYGON);
-            glVertex2f(a,b);
-            glVertex2f(a,b+15);
-            glVertex2f(k,b+15);
-            glVertex2f(k,b);
-            glEnd();
-            a=a+45;
-  }
-               }
+	            glVertex2f(a,b);
+    	        glVertex2f(a,b+15);
+    	        glVertex2f(k,b+15);
+    	        glVertex2f(k,b);
+    	        glEnd();
+    	        a=a+45;
+  			}
+		}
         b=b+20;
    	 }
 }
+
 void diamond(int a, int b)
 {
-    glColor3f(1,.6,.9);
+	// I don't know what this does :D
+    glColor3f(1, 0.6, 0.9);
     glBegin(GL_POLYGON);
     glVertex2f(a,b);
     glVertex2f(a-5,b+20);
-     glVertex2f(a,b+40);
-     glVertex2f(a+5,b+20);
-     glEnd();
+    glVertex2f(a,b+40);
+    glVertex2f(a+5,b+20);
+    glEnd();
+    
+    // Draws the actual diamonds in the output
     glColor3f(1,1,1);
     glBegin(GL_POLYGON);
-        glVertex2f(a,b);
-        glVertex2f(a-10,b+20);
-        glVertex2f(a,b+40);
-        glVertex2f(a+10,b+20);
+    glVertex2f(a,b);
+    glVertex2f(a-10,b+20);
+    glVertex2f(a,b+40);
+    glVertex2f(a+10,b+20);
     glEnd();
 }
+
 void support1()
 {
+	// White polygon for second level brick layer
     glColor3f(1,1,1);
     glBegin(GL_POLYGON);
         glVertex2f(150,200);
@@ -139,10 +153,14 @@ void support1()
         glVertex2f(300,265);
         glVertex2f(300,200);
     glEnd();
+    
+    // Creates the brick pattern.
     bricks(155,205,300,260);
 }
+
 void support2()
 {
+	// White polygon layer for the second level.
     glColor3f(1,1,1);
     glBegin(GL_POLYGON);
         glVertex2f(0,350);
@@ -150,11 +168,15 @@ void support2()
         glVertex2f(140,415);
         glVertex2f(140,350);
     glEnd();
+    
+    // Creates the brick pattern.
     bricks(5,355,130,415);
 
 }
+
 void support3()
 {
+	// White polygon layer for the top most layer.
     glColor3f(1,1,1);
     glBegin(GL_POLYGON);
         glVertex2f(275,450);
@@ -162,10 +184,14 @@ void support3()
         glVertex2f(550,515);
         glVertex2f(550,450);
     glEnd();
+    
+    // Creates the brick pattern.
     bricks(280,455,550,510);
 }
+
 void support4()
 {
+	// White polygon layer for the right most layer
     glColor3f(1,1,1);
     glBegin(GL_POLYGON);
         glVertex2f(670,300);
@@ -173,22 +199,30 @@ void support4()
         glVertex2f(900,385);
         glVertex2f(900,300);
     glEnd();
+    
+    // Creates the brick pattern.
     bricks(675,305,900,380);
 }
+
+// This draws kio.
 void kio()
 {
+	// Draws the foot
     glBegin(GL_POLYGON);
-        glColor3f(1,0,0);
-        glVertex2f(c1,c2);
-        glVertex2f(c1,c2+3);
-        glColor3f(1,1,1);
-        glVertex2f(c1+25,c2+10);
-        glColor3f(1,0,0);
-        glVertex2f(c1+50,c2+3);
-        glVertex2f(c1+50,c2);
-        glEnd();
-       int i;
+    glColor3f(1,0,0);
+    glVertex2f(c1,c2);
+    glVertex2f(c1,c2+3);
+    glColor3f(1,1,1);
+    glVertex2f(c1+25,c2+10);
+    glColor3f(1,0,0);
+    glVertex2f(c1+50,c2+3);
+    glVertex2f(c1+50,c2);
+    glEnd();
+
+    int i;
     double angle;
+    
+    // Draws the black and white thingy.
     glBegin(GL_QUAD_STRIP);
     for(i=12;i<=24;i++)
     {
@@ -238,6 +272,7 @@ void kio()
     glVertex2f(c1+30,c2+40);
     glEnd();
 }
+
 void spikes()
 {
     int i,l=480;
@@ -252,6 +287,8 @@ void spikes()
     			l+=25;
     }
 }
+
+// This function draws the bule coins(or rubies) in the game.
 void rubbies(int x,int y,int p,int q)
 {
      p=1,q=10;
@@ -266,48 +303,70 @@ void rubbies(int x,int y,int p,int q)
     }
     glEnd();
 }
+
 int disp[]={0,0,0,0,0,0,0};
 int posy[]={265,265,415,-415,515,-515};
 int posx[]={170,250,26,98,400,499};
 int check[]={2,2,3,4,4};
+
 void diamondsdisp()
 {
+		// Determining where to place the diamonds.
     	for(int i=0;i<6;i++)
             if((c1==posx[i] || c1==posx[i]-1 || c1==posx[i]-2) && check[i]==level)
-                disp[i]=1,count+=500;
+                disp[i]=1;
+                
+        count+=500;
+        
+        // Calls the function to draw diamond in a particular position.
     	for(int i=0;i<6;i++)
       		  if(disp[i]==0)
-    diamond(posx[i],posy[i]);
+    				diamond(posx[i],posy[i]);
 }
+
 int rubx[]={50,250,525};
 int ruby[]={200,150,575};
 int dispr[]={1,1,1};
 int checklevel[]={1,1,3};
+
 void callrubies()
 {
+	// It is trying to add the positions where the rubies are to be placed.
     for(int i=0;i<2;i++)
         if((c1+50)>=rubx[i] && checklevel[i]==level && c1<rubx[i])
             if((c2+50)>=ruby[i])
-                dispr[i]=0,count=count+250;
-    glColor3f(0,.139,0.639);
+                dispr[i]=0;
+            
+    count=count+250;
+    
+    // Draws rubies in the game.
+    glColor3f(0,0.139,0.639);
     for(int i=0;i<2;i++)
         if(dispr[i]==1)
-    rubbies(rubx[i],ruby[i],0,0);
+    		rubbies(rubx[i],ruby[i],0,0);
 }
+
 void ring()
 {
     if(disp[6]==0)
     {
-    glColor3f(1,1,0);
-    rubbies(550,350,17,20);
-    glColor3f(0,1,1);
-    rubbies(550,370,20,25);
-   }	
-    if((c1+50)>530 && c1<570)
-        if(c2>=330 && c2<=380)
-        disp[6]=1,count=count+2500;
+    	// Draws the gem on the ring
+    	glColor3f(1,1,0);
+    	rubbies(550,350,17,20);
+    	// Draws the ring for the ring
+    	glColor3f(0,1,1);
+    	rubbies(550,370,0,0);
+   }
+   
+   if((c1+50)>530 && c1<570)
+       if(c2>=330 && c2<=380)
+   	     disp[6]=1;
+   	     
+   count=count+2500;
 }
+
 int end=0;
+
 void death1()
 {
     if(c2<90 && (c1+50)>=515)
@@ -320,6 +379,8 @@ void death1()
 
 int q1=800;
 int q2=385;
+
+/*
 void princess()
 {
     glBegin(GL_POLYGON);
@@ -357,7 +418,9 @@ void princess()
     glColor3f(1,1,1);
     glVertex2f(q1+50,q2+25);
     glEnd();
+
     rubbies(q1+25,q2+50,0,15);
+
     glColor3f(0.63,0.15,0.56);
     glBegin(GL_POLYGON);
     glVertex2f(q1,q2+50);
@@ -369,16 +432,19 @@ void princess()
     glVertex2f(q1+50,q2+60);
     glVertex2f(q1+50,q2+50);
     glEnd();
+
     glColor3f(0,0,0);
     rubbies(q1+20,q2+45,0,2);
     rubbies(q1+30,q2+45,0,2);
     glColor3f(1,0,0);
+
     glBegin(GL_LINES);
     glVertex2f(q1+25,q2+37);
     glVertex2f(q1+20,q2+40);
     glVertex2f(q1+25,q2+37);
     glVertex2f(q1+30,q2+40);
     glEnd();
+
     if(c1>750 && c2>300)
     {
         win=1;
@@ -386,26 +452,39 @@ void princess()
     window3();
     }
 }
+*/
+
 void window2()
 {
     glClearColor(0,0,0,1);
     glClear(GL_COLOR_BUFFER_BIT);
+    
+    // Draws the bottom most brick layer.
     base();
+    
+    // Creates all the brick layers.
     support1();
     support2();
     support3();
     support4();
+    
+    // Adds the rubies in the game.
     callrubies();
+    
+    // Draws the diamonds in the game.
     diamondsdisp();
-    ring();
+    
+    // Draws Kio
     kio();
+    
+    // Draws the spikes. This is a death trap. BEWARE. Simran is bad.
     spikes();
-    princess();
+    
     death1();
     glFlush();
     glutSwapBuffers();
-
 }
+
 void window1()
 {
         glClearColor(0,0,0,1);
@@ -420,6 +499,7 @@ void window1()
         glColor3f(1,0,1);
         glVertex2f(900,0);
         glEnd();
+
         char str[]="!THE RESPONSIBLE CITIZEN!";
         char str1[]="Instructions:-";
         char str2[]="w-to jump up.";   
@@ -430,6 +510,7 @@ void window1()
         char str7[]="and";
         char str8[]="SURYA KIRAN K";
         char str9[]="Left click to continue";
+
         glColor3f(1,0,0);
         glRasterPos2f(425,400);
             for(int i=0;i<strlen(str);i++)
@@ -463,19 +544,21 @@ void window1()
             glFlush();
             glutSwapBuffers();
 }
+
 void mouse(int bt,int st,int x,int y)
 {
     if(bt==GLUT_LEFT_BUTTON && st==GLUT_DOWN )
         wind[1]=1,wind[0]=0;
     glutPostRedisplay();
 }
+
 void window3()
 {
     char str1[]="score=";
     char str[20];
     char str2[]="!!YOU HAVE BEEN A RESPONSIBLE CITIZEN!!";
     char str3[]="!!WINNER!! : ";
-    char str4[]="!!!YOU MISSED ON FEW!!!";
+    char str4[]="!!!YOU TOOK A WRONG STEP!!!";
     char str5[]="!!GAMEOVER!!";
     char str6[]="!!YOU MISSED ON FEW !!";
     glClearColor(0,1,1,0);
@@ -519,6 +602,7 @@ void window3()
             glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,str1[i]);
         glFlush();
        }
+
 void display1()
 {   
     glClearColor(0,0,0,1);
@@ -530,6 +614,7 @@ void display1()
     glFlush();
    
 }
+
 void mytimer(int n)
 {
     n=60;
@@ -623,28 +708,26 @@ void mytimer(int n)
     glutTimerFunc(8,mytimer,60);
     }
 }
+
 void mykey(unsigned char key,int x,int y)
 {
-    if(key=='d'|| key=='D')
-    {   
-        if(level==2 && c1>300 && lock==1)
-        {
-            level--;
+    if(key=='d'|| key=='D') {   
+		if(level==2 && c1>300 && lock==1) {
+			level--;
             temp=219;
             lock=0;
             glutTimerFunc(1,mytimer,60);
         }
-        if(lock==1 && level==3 && c1>140)
-        {
+
+        if(lock==1 && level==3 && c1>140) {
             level--;
             lock=0;
             temp=250;
             glutTimerFunc(1,mytimer,60);
         }
-        if(lock1==0)
-        {
-            if(c1>550 && lock==1)
-            {
+
+        if(lock1==0) {
+            if(c1>550 && lock==1) {
                 temp=200;
                 extra=230;
                 lock1=1;
@@ -653,57 +736,58 @@ void mykey(unsigned char key,int x,int y)
                 glutTimerFunc(1,mytimer,60);
             }
         }
+
         if((level==3 || level==4) && (c1+50)<900 )
            c1=c1+3;
-        else
-            if((c1+50)<900)
+
+        else if((c1+50)<900)
             c1=c1+2;
     }
-    if(key=='a' || key=='A')
-    {
-        if(level==2 && (c1+25)<150 && lock==1)
-        {
+
+    if(key=='a' || key=='A') {
+        if(level==2 && (c1+25)<150 && lock==1) {
             level--;
             temp=219;
             lock=0;
             glutTimerFunc(1,mytimer,60);
         }
-        if(lock==1 && level==3 && c1>140)
-        {
+        
+        if(lock==1 && level==3 && c1>140) {
             level--;
             temp=250;
             glutTimerFunc(1,mytimer,60);
         }
-        if(level==4 && (c1+50)<275)
-        {
+
+        if(level==4 && (c1+50)<275) {
             level=level-2;
             lock=0;
             temp=200;
             extra=50;
             glutTimerFunc(1,mytimer,60);
         }
-        if(level>=5 && (c1+50)<670)
-        {
+        
+        if(level>=5 && (c1+50)<670) {
             extra=100;
             temp=200;
             glutTimerFunc(6,mytimer,60);
         }
+        
         if((level==3 || level==4) && c1>0 )
             c1=c1-3;
-        else
-        if(c1>0)
+        
+        else if(c1>0)
             c1=c1-2;
     }
-    if(lock==1)
-    {
-        if(key=='w' || key=='W')
-        {
-            if(level==1 && (c1+40)>150 && c2<100 && (c1+10)<300)
-            {
+
+	lock = 0;
+    if(lock==0) {
+        if(key=='w' || key=='W') {
+            if(level==1 && (c1+40)>150 && c2<100 && (c1+10)<300) {
                 temp=120;
                 ylimit=4;
                 lock=0;
             }
+            
             else if(level==2 && c1<140 )
             {
                 temp=149;
@@ -722,11 +806,11 @@ void mykey(unsigned char key,int x,int y)
                 lock=0;
                 ylimit=1;
             }
-            else if(level==4 && c1>=525)
+            else if(level==5 && c1>=525)
             {
                 temp=164;
                 lock=0;
-                ylimit=2;
+                ylimit	=2;
             }
             else if(level==2 && (c1+50)>=275)
             {
@@ -738,12 +822,13 @@ void mykey(unsigned char key,int x,int y)
             {
                 temp=0;
                 lock=0;
-  }
+  			}
             glutTimerFunc(1,mytimer,60);
       }
-   }
+	}
     glutPostRedisplay();
 }
+
 void main(int argc,char **argv)
 {
     glutInit(&argc,argv);
@@ -754,8 +839,7 @@ void main(int argc,char **argv)
     myinit();
     glutMouseFunc(mouse);
     if(end==0)
-    glutKeyboardFunc(mykey);
+ 	   glutKeyboardFunc(mykey);
     glutDisplayFunc(display1);
-   	    glutMainLoop();
+   	glutMainLoop();
 }
-
