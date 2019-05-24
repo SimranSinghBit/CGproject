@@ -416,3 +416,5 @@ ERROR 2019-05-23 19:07:53 unity.settings UnitySettings.cpp:404 Invalid monitor i
 (nautilus:16782): GLib-GObject-WARNING **: invalid (NULL) pointer instance
 
 (nautilus:16782): GLib-GObject-CRITICAL **: g_signal_connect_object: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+ERROR 2019-05-24 09:04:56 unityte <unknown>:0 g_value_set_object: assertion 'g_value_type_compatible (G_OBJECT_TYPE (v_object), G_VALUE_TYPE (value))' failed
+ERROR 2019-05-24 09:06:07 unity.settings UnitySettings.cpp:404 Invalid monitor index: -1. Returning index 0 monitor instead.

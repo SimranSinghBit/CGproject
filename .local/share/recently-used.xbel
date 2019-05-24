@@ -29,12 +29,12 @@
       </metadata>
     </info>
   </bookmark>
-  <bookmark href="file:///home/simran/Downloads/pro.c" added="2019-05-24T02:04:05Z" modified="2019-05-24T02:04:05Z" visited="2019-05-24T02:04:05Z">
+  <bookmark href="file:///home/simran/Downloads/pro.c" added="2019-05-24T02:04:05Z" modified="2019-05-24T16:06:03Z" visited="2019-05-24T02:04:05Z">
     <info>
       <metadata owner="http://freedesktop.org">
         <mime:mime-type type="text/x-csrc"/>
         <bookmark:applications>
-          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2019-05-24T02:04:05Z" count="1"/>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2019-05-24T16:06:03Z" count="3"/>
         </bookmark:applications>
       </metadata>
     </info>
@@ -65,7 +65,7 @@
       </metadata>
     </info>
   </bookmark>
-  <bookmark href="file:///home/simran/pro1.c" added="2019-05-24T02:06:14Z" modified="2019-05-24T02:12:10Z" visited="2019-05-24T02:06:14Z">
+  <bookmark href="file:///home/simran/pro1.c" added="2019-05-24T02:06:14Z" modified="2019-05-24T16:08:23Z" visited="2019-05-24T02:06:14Z">
     <info>
       <metadata owner="http://freedesktop.org">
         <mime:mime-type type="text/x-csrc"/>
@@ -73,7 +73,47 @@
           <bookmark:group>gedit</bookmark:group>
         </bookmark:groups>
         <bookmark:applications>
-          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2019-05-24T02:12:10Z" count="9"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2019-05-24T16:08:23Z" count="10"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/simran/Downloads/pro2.c" added="2019-05-24T16:05:10Z" modified="2019-05-24T16:05:11Z" visited="2019-05-24T16:05:10Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-csrc"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="nautilus" exec="&apos;gedit %U&apos;" modified="2019-05-24T16:05:10Z" count="1"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2019-05-24T16:05:11Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/simran/Downloads/pro3.c" added="2019-05-24T16:06:24Z" modified="2019-05-24T16:06:24Z" visited="2019-05-24T16:06:24Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-csrc"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2019-05-24T16:06:24Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/simran/148.c" added="2019-05-24T16:08:17Z" modified="2019-05-24T16:08:59Z" visited="2019-05-24T16:08:17Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-csrc"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2019-05-24T16:08:59Z" count="3"/>
         </bookmark:applications>
       </metadata>
     </info>
