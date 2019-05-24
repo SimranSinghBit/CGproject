@@ -673,9 +673,9 @@ void mytimer(int n)
     if(temp<400)
     {
         if(temp<200)
-            c2=c2++;
+            c2=c2+2;
         if(temp>=200)
-            c2=c2--;
+            c2=c2-2;
         if(level==1 && (c1+35)>=150 && c2>=265 && c1<300 && ylimit==0)
         {    int c3=c2-265;
             temp=400-c3;
@@ -780,9 +780,9 @@ void mykey(unsigned char key,int x,int y)
     }
 
 	lock = 0;
-    if(lock==0) {
+    if(lock==1) {
         if(key=='w' || key=='W') {
-            if(level==1 && (c1+40)>150 && c2<100 && (c1+10)<300) {
+            if(level==1 || (c1+40)>150 || c2<100 || (c1+10)<300) {
                 temp=120;
                 ylimit=4;
                 lock=0;

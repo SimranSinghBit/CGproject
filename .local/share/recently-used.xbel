@@ -16,7 +16,7 @@
       </metadata>
     </info>
   </bookmark>
-  <bookmark href="file:///home/simran/pro.c" added="2019-05-23T11:46:51Z" modified="2019-05-24T00:28:50Z" visited="2019-05-23T11:46:51Z">
+  <bookmark href="file:///home/simran/pro.c" added="2019-05-23T11:46:51Z" modified="2019-05-24T02:09:21Z" visited="2019-05-23T11:46:51Z">
     <info>
       <metadata owner="http://freedesktop.org">
         <mime:mime-type type="text/x-csrc"/>
@@ -24,7 +24,56 @@
           <bookmark:group>gedit</bookmark:group>
         </bookmark:groups>
         <bookmark:applications>
-          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2019-05-24T00:28:50Z" count="156"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2019-05-24T02:09:21Z" count="168"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/simran/Downloads/pro.c" added="2019-05-24T02:04:05Z" modified="2019-05-24T02:04:05Z" visited="2019-05-24T02:04:05Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-csrc"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2019-05-24T02:04:05Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///tmp/mozilla_simran0/pro.c" added="2019-05-24T02:04:27Z" modified="2019-05-24T02:04:27Z" visited="2019-05-24T02:04:27Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-csrc"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2019-05-24T02:04:27Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/simran/Downloads/pro1.c" added="2019-05-24T02:05:51Z" modified="2019-05-24T02:05:51Z" visited="2019-05-24T02:05:52Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-csrc"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2019-05-24T02:05:51Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/simran/pro1.c" added="2019-05-24T02:06:14Z" modified="2019-05-24T02:12:10Z" visited="2019-05-24T02:06:14Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-csrc"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2019-05-24T02:12:10Z" count="9"/>
         </bookmark:applications>
       </metadata>
     </info>

@@ -403,3 +403,16 @@ ERROR 2019-05-23 09:11:50 unity.settings UnitySettings.cpp:404 Invalid monitor i
 
 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+ERROR 2019-05-23 19:05:28 unity.settings UnitySettings.cpp:404 Invalid monitor index: -1. Returning index 0 monitor instead.
+ERROR 2019-05-23 19:06:02 unity.settings UnitySettings.cpp:404 Invalid monitor index: -1. Returning index 0 monitor instead.
+ERROR 2019-05-23 19:07:53 unity.settings UnitySettings.cpp:404 Invalid monitor index: -1. Returning index 0 monitor instead.
+
+(nautilus:16782): GLib-GIO-CRITICAL **: g_dbus_interface_skeleton_unexport: assertion 'interface_->priv->connections != NULL' failed
+
+(nautilus:16782): GLib-GIO-CRITICAL **: g_dbus_interface_skeleton_unexport: assertion 'interface_->priv->connections != NULL' failed
+
+(nautilus:16782): Gtk-CRITICAL **: gtk_icon_theme_get_for_screen: assertion 'GDK_IS_SCREEN (screen)' failed
+
+(nautilus:16782): GLib-GObject-WARNING **: invalid (NULL) pointer instance
+
+(nautilus:16782): GLib-GObject-CRITICAL **: g_signal_connect_object: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
