@@ -7,6 +7,7 @@
 #include<time.h>
 int x=5;
 int y=5;
+int score=0;
 int c1=25;
 int c2=85;
 int b1=25;
@@ -151,14 +152,14 @@ void support1()
 	// White polygon for second level brick layer
     glColor3f(1,1,1);
     glBegin(GL_POLYGON);
-        glVertex2f(150,200);
-        glVertex2f(150,265);
+        glVertex2f(0,200);
+        glVertex2f(0,265);
         glVertex2f(300,265);
         glVertex2f(300,200);
     glEnd();
     
     // Creates the brick pattern.
-    bricks(155,205,300,260);
+    bricks(0,205,300,260);
 }
 
 void support2()
@@ -319,7 +320,7 @@ void diamondsdisp()
             if((c1==posx[i] || c1==posx[i]-1 || c1==posx[i]-2) && check[i]==level)
                 disp[i]=1;
                 
-        count+=500;
+        count+=5;
         
         // Calls the function to draw diamond in a particular position.
     	for(int i=0;i<6;i++)
@@ -340,7 +341,7 @@ void callrubies()
             if((c2+50)>=ruby[i])
                 dispr[i]=0;
             
-    count=count+250;
+    count=count+5;
     
     // Draws rubies in the game.
     glColor3f(0,0.139,0.639);
@@ -365,7 +366,7 @@ void ring()
        if(c2>=330 && c2<=380)
    	     disp[6]=1;
    	     
-   count=count+2500;
+   count=count+5;
 }
 
 int end=0;
@@ -386,7 +387,7 @@ int q2=385;
 
 void dustbin()
 {
-    glBegin(GL_POLYGON);
+    	glBegin(GL_POLYGON);
         glColor3f(.73,0,0.56);
         glVertex2f(q1,q2+30);
         glVertex2f(q1,q2+33);
@@ -396,8 +397,7 @@ void dustbin()
         glVertex2f(q1+50,q2+33);
         glVertex2f(q1+50,q2+30);
         glEnd();
-
-    glBegin(GL_POLYGON);
+ 	    glBegin(GL_POLYGON);
         glColor3f(.73,0,0.56);
         glVertex2f(q1+10,q2);
         glVertex2f(q1,q2+33);
@@ -406,6 +406,12 @@ void dustbin()
         glColor3f(.73,0,0.56);
         glVertex2f(q1+40,q2);
         glEnd();
+        if(c1>750 && c2>300)
+    	{
+        win=1;
+        wind[1]=0;
+    window3();
+    }
 }
 /*
 void princess()
@@ -527,23 +533,37 @@ void window1()
         glColor3f(1,0,1);
         glVertex2f(900,0);
         glEnd();
-
+		char ss[]="BANGALORE INSTITUTE OF TECHNOLOGY";
+		char ss1[]="COMPUTER SCIENCE DEPARTMENT";
+		char sss[]="Computer Graphics and Visualization 15CS62";
         char str[]="!THE RESPONSIBLE CITIZEN!";
         char str1[]="Instructions:-";
         char str2[]="w-to jump up.";   
         char str3[]="a-to move left";
         char str4[]="d-to move right";
-        char str5[]="By";
+        char str10[]="Guided By Prof.Girija";
+        char str5[]="Team Members :";
         char str6[]="SIMRAN";
         char str7[]="and";
         char str8[]="SURYA KIRAN K";
         char str9[]="Left click to continue";
-
+         glColor3f(1,0,0);
+		glRasterPos2f(200,500);
+            for(int i=0;i<strlen(ss);i++)
+            glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,ss[i]);
+            glColor3f(1,0,0);
+		glRasterPos2f(200,450);
+            for(int i=0;i<strlen(ss1);i++)
+            glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,ss1[i]);
+            glColor3f(1,.5,0);
+		glRasterPos2f(200,400);
+            for(int i=0;i<strlen(sss);i++)
+            glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,sss[i]);
         glColor3f(1,0,0);
-        glRasterPos2f(425,400);
+        glRasterPos2f(255,350);
             for(int i=0;i<strlen(str);i++)
             glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,str[i]);
-            glColor3f(1,0,1);
+            glColor3f(0,0,0);
             glRasterPos2f(200,200);
             for(int i=0;i<strlen(str1);i++)
             glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,str1[i]);
@@ -556,7 +576,11 @@ void window1()
             glRasterPos2f(200,125);
             for(int i=0;i<strlen(str4);i++)
             glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,str4[i]);
-            glColor3f(1,1,0.75);
+            glColor3f(0,0,0);
+            glRasterPos2f(350,250);
+            for(int i=0;i<strlen(str10);i++)
+            glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,str10[i]);
+            
             glRasterPos2f(625,200);
             for(int i=0;i<strlen(str5);i++)
             glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,str5[i]);
@@ -584,8 +608,8 @@ void window3()
 {
     char str1[]="score=";
     char str[20];
-    char str2[]="!!YOU HAVE BEEN A RESPONSIBLE CITIZEN!!";
-    char str3[]="!!WINNER!! : ";
+    char str3[]="!!YOU HAVE BEEN A RESPONSIBLE CITIZEN!!";
+    char str2[]="!!WINNER!! : ";
     char str4[]="!!!YOU TOOK A WRONG STEP!!!";
     char str5[]="!!GAMEOVER!!";
     char str6[]="!!YOU MISSED ON FEW !!";
@@ -605,7 +629,7 @@ void window3()
             glRasterPos2f(150,400);
             for(int i=0;i<strlen(str6);i++)
             glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,str6[i]);
-            glRasterPos2f(350,375);
+            glRasterPos2f(50,375);
             for(int i=0;i<strlen(str3);i++)
             glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,str3[i]);
         }
@@ -618,16 +642,22 @@ void window3()
             for(int i=0;i<strlen(str5);i++)
             glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,str5[i]);
         }
-
-        //_itoa_s(count,str,10);
+char buff[6];
+      
         glColor3f(1,1,0);
         glRasterPos2f(425,300);
         for(int i=0;i<strlen(str);i++)
             glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,str[i]);
-       
+            printf("Count==============%d",count);
+       sprintf(buff,"%d",count);
         glRasterPos2f(350,300);
-        for(int i=0;i<strlen(str1);i++)
+        for(int i=0;i<strlen(str1);i++){
             glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,str1[i]);
+           
+            }
+             glRasterPos2f(460,300);
+            for(int i=0;i<strlen(buff);i++)
+             glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,buff[i]);
         glFlush();
        }
 
@@ -736,6 +766,7 @@ void mytimer(int n)
         }
     glutPostRedisplay();
     if(extra<=0)
+    
         temp++;
     else
         extra--;
@@ -830,11 +861,11 @@ void mykey(unsigned char key,int x,int y)
         	//printf("Hello world");
         	//printf("Level: %d , c1: %d , c2: %d",level,c1,c2);
            // if(level==1 && (c1+40)>150 && c2<100 && (c1+10)<300) {
-           	if (level==1){
+          	if (level==1 && c1<140){
             	printf("Inside Level 1\n");
                 temp=120;
                 ylimit=4;
-                lock=0;
+                lock=1;
             }
             
             else if(level==2 && c1<140 )
@@ -847,7 +878,7 @@ void mykey(unsigned char key,int x,int y)
             else if(level==3 && c1<140)
             {
             	printf("Inside Level 3\n");
-                temp=49;
+                temp=149;
                 ylimit=20;
                 lock=0;
             }

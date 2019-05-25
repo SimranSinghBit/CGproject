@@ -92,7 +92,7 @@
       </metadata>
     </info>
   </bookmark>
-  <bookmark href="file:///home/simran/Downloads/pro3.c" added="2019-05-24T16:06:24Z" modified="2019-05-24T16:06:24Z" visited="2019-05-24T16:06:24Z">
+  <bookmark href="file:///home/simran/Downloads/pro3.c" added="2019-05-24T16:06:24Z" modified="2019-05-24T18:28:54Z" visited="2019-05-24T16:06:24Z">
     <info>
       <metadata owner="http://freedesktop.org">
         <mime:mime-type type="text/x-csrc"/>
@@ -100,12 +100,13 @@
           <bookmark:group>gedit</bookmark:group>
         </bookmark:groups>
         <bookmark:applications>
-          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2019-05-24T16:06:24Z" count="1"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2019-05-24T18:28:54Z" count="5"/>
+          <bookmark:application name="nautilus" exec="&apos;gedit %U&apos;" modified="2019-05-24T18:28:07Z" count="1"/>
         </bookmark:applications>
       </metadata>
     </info>
   </bookmark>
-  <bookmark href="file:///home/simran/148.c" added="2019-05-24T16:08:17Z" modified="2019-05-24T16:08:59Z" visited="2019-05-24T16:08:17Z">
+  <bookmark href="file:///home/simran/148.c" added="2019-05-24T16:08:17Z" modified="2019-05-25T21:26:29Z" visited="2019-05-24T16:08:17Z">
     <info>
       <metadata owner="http://freedesktop.org">
         <mime:mime-type type="text/x-csrc"/>
@@ -113,7 +114,7 @@
           <bookmark:group>gedit</bookmark:group>
         </bookmark:groups>
         <bookmark:applications>
-          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2019-05-24T16:08:59Z" count="3"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2019-05-25T21:26:29Z" count="163"/>
         </bookmark:applications>
       </metadata>
     </info>
